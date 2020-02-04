@@ -1,7 +1,7 @@
 const colors = {
-    'null': 'Grey',
-    '-1': 'Red',
-    '1': 'Blue'
+    'null': '',
+    '-1': 'X',
+    '1': 'O'
 };
 const winCombos = [
     [0,1,2],[3,4,5],[6,7,8],[0,3,6],
@@ -15,11 +15,11 @@ let resetBtn = document.querySelector('.reset')
 let board;
 let turn;
 let winner;
+let currentLetter;
 
 
 document.querySelector('.game-board').addEventListener('click', handleBoxClick);
 document.querySelector('.reset').addEventListener('click', replayClick)
-
 
 
 function init() {
@@ -28,13 +28,14 @@ function init() {
             null, null, null];
     turn = -1,
     winner = null;
+    resetBtn.style.visibility = 'hidden';
     render();
 }
 
 function render() {
     for (let i = 0; i < boxes.length; i++) {
-        let curentColor  = colors[board[i]];
-        boxes[i].style.backgroundColor = curentColor;
+        currentLetter  = colors[board[i]];
+        boxes[i].innerText = currentLetter;
     }
     if (winner === null) {
         messageBoard.innerText = `It is ${colors[turn]}'s turn!`;
@@ -44,10 +45,10 @@ function render() {
         resetBtn.style.visibility = 'visible';
     } else {
         if (turn === 1) {
-            messageBoard.innerText = `Red is Winner!`;
+            messageBoard.innerText = `X is Winner!`;
             resetBtn.style.visibility = 'visible';
         } else {
-            messageBoard.innerText = `Blue is Winner!`;
+            messageBoard.innerText = `O is Winner!`;
             resetBtn.style.visibility = 'visible';
         }
     }

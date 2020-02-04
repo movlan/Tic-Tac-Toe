@@ -7,7 +7,7 @@ body {
 }
 header, h2 {
     margin: 15px auto;
-    color: #444444;
+    color: #000000;
 }
 
 header {
@@ -37,7 +37,11 @@ h2 {
     justify-content: center;
     border: 2px solid;
     margin: -1px;
+    font-size: 12vmin;
 }
+/* .box#1 {
+    border: 2px solid;
+} */
 
 section {
     margin: 30px;
@@ -46,6 +50,7 @@ section {
     align-items: center;
 }
 .reset {
+    font-family: 'Permanent Marker', sans-serif;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
