@@ -1,12 +1,23 @@
 body {
     display: flex;
     flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Permanent Marker', sans-serif;
+    text-transform: uppercase;
+    background-color: #e9e9e9;
 }
 header, h2 {
-    margin: 0 auto;
-
+    margin: 15px auto;
+    color: #444444;
 }
+
+header {
+    font-size: 5vmin;
+}
+
+h2 {
+    font-size: 3vmin;
+}
+
 .game {
     display: flex;
     flex-direction: column;
@@ -16,8 +27,8 @@ header, h2 {
 .game-board {
     display: grid;
     justify-content: center;
-    grid-template-rows: 20vmin 20vmin 20vmin;
-    grid-template-columns: 20vmin 20vmin 20vmin;
+    grid-template-rows: 15vmin 15vmin 15vmin;
+    grid-template-columns: 15vmin 15vmin 15vmin;
 }
 
 .box {
@@ -28,9 +39,25 @@ header, h2 {
     margin: -1px;
 }
 
-.reset{
-    margin: 0 auto;
-    width: 20vmin;
-    display: block;
-    float: left;
+section {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+.reset {
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #979797;
+    color: black;
+    border: 2px solid rgb(133, 133, 133);
+    width: 200px;
+    visibility: hidden;
+  }
+  
+  .reset:hover {background-color: #777777;}
